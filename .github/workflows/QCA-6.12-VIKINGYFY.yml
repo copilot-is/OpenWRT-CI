@@ -4,10 +4,10 @@ name: QCA-6.12-VIKINGYFY
 #CI计划
 on:
   #自动编译：当Auto-Clean运行完成后
-  workflow_run:
-    workflows: ["Auto-Clean"]
-    types:
-      - completed
+#  workflow_run:
+#    workflows: ["Auto-Clean"]
+#    types:
+#      - completed
   #手动编译
   workflow_dispatch:
     inputs:
@@ -32,7 +32,7 @@ jobs:
       fail-fast: false
       #max-parallel: 3
       matrix:
-        CONFIG: [IPQ807X-NOWIFI, IPQ807X-WIFI,IPQ60XX-NOWIFI, IPQ60XX-WIFI]
+        CONFIG: [IPQ60XX-NOWIFI, IPQ60XX-WIFI]
         SOURCE: [VIKINGYFY/immortalwrt]
         BRANCH: [main]
 
@@ -42,11 +42,11 @@ jobs:
       #编译配置
       WRT_CONFIG: ${{matrix.CONFIG}}
       #默认主题
-      WRT_THEME: argon
+      WRT_THEME: bootstrap
       #默认主机名
-      WRT_NAME: DAE-WRT
+      WRT_NAME: immortalWrt
       #默认WIFI名称
-      WRT_SSID: DAE-WRT
+      WRT_SSID: immortalWrt
       #默认WIFI密码
       WRT_WORD: 12345678
       #默认地址
