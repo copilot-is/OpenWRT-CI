@@ -119,7 +119,7 @@ UPDATE_VERSION() {
 
 
 #不编译xray-core
-sed -i 's/+xray-core//' luci-app-passwall/Makefile
+#sed -i 's/+xray-core//' luci-app-passwall/Makefile
 
 #删除官方的默认插件
 rm -rf ../feeds/luci/applications/luci-app-{passwall*,mosdns,dockerman,dae*,bypass*}
